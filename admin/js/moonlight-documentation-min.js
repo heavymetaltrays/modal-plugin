@@ -1,0 +1,1 @@
+function menuFilter(){var e,t,n;for(e=document.getElementById("search-input").value.toUpperCase(),t=document.getElementById("menu-links").getElementsByTagName("li"),n=0;n<t.length;n++)t[n].getAttribute("filter").toUpperCase().indexOf(e)>-1?(t[n].style.display="",t[n].parentNode.parentNode.style.display=""):t[n].style.display="none"}

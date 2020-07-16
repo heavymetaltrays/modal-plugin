@@ -1,0 +1,44 @@
+// Don't forget to add the new colors to the functions.php files.
+
+$colors: (
+    'black': (
+        'base':#000000
+    ),
+    'white': (
+        'base':#FFFFFF
+    ),
+    'grey': (
+        'base': #5F5F5F,
+        'text': #5F5F5F,
+        'border': #D7D7D7,
+        'background': #F0F0F0,
+        'placeholder': #AAAAAA
+    ),
+    'red': (
+        'base':#FF0000
+    ),
+    'orange': (
+        'base':#EEBB00
+    ),
+    'green': (
+        'base':#00BB00
+    ),
+    'yellow': (
+        'base':#EEFF00
+    ),
+    'blue': (
+        'base':#00AAFF
+    ),
+    'indigo': (
+        'base':#DD00FF
+    ),
+    'violet': (
+        'base':#BB00FF
+    )
+);
+
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
+}
+
+// Ex: color('grey', 'text');

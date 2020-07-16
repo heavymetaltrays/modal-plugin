@@ -1,0 +1,26 @@
+{
+	"name": "moonlight/inline-link",
+	"category": "common",
+	"attributes": {
+		"pairedID": {
+			"type": "string",
+			"default": "999999"
+		},
+		"groupID": {
+			"type": "string",
+			"default": ""
+		},
+		"attrID": {
+			"type": "string",
+			"default": ""
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}
