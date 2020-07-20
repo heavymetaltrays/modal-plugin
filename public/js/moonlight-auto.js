@@ -46,6 +46,21 @@ function autoFancybox() {
 
                 elementID = classes[i].split( "moonlight-popup-" )[1];
 
+                classElement.classList.remove( classes[i] );
+                classElement.classList.add( "wp-post-moonlight-inline-link" );
+
+                classElement.setAttribute( "data-src", "#moonlight-popup-" + elementID );
+                classElement.setAttribute( "data-touch", "false" );
+                classElement.setAttribute( "data-fancybox", "" );
+                classElement.style.cursor = "pointer";
+
+                inlineContent = document.createElement( "div" );
+                inlineContent.classList.add( "wp-post-moonlight-inline-content" );
+                inlineContent.id = "moonlight-popup-" + elementID;
+                inlineContent.style.display = "none";
+                inlineContent.innerHTML = '<span class="loading-dots">Loading</span>';
+                document.body.appendChild( inlineContent );
+
                 fetch( 
                     document.location.origin + "/wp-json/wp/v2/moonlight-popup/" + elementID, 
                     {
@@ -70,21 +85,9 @@ function autoFancybox() {
                 ).then(
                     
                     function ( data ) {
-
-                        classElement.classList.remove( classes[i] );
-                        classElement.classList.add( "wp-post-moonlight-inline-link" );
-        
-                        classElement.setAttribute( "data-src", "#moonlight-popup-" + elementID );
-                        classElement.setAttribute( "data-touch", "false" );
-                        classElement.setAttribute( "data-fancybox", data.moonlight_popup_group_id );
-        
-                        inlineContent = document.createElement( "div" );
-                        inlineContent.classList.add( "wp-post-moonlight-inline-content" );
-                        inlineContent.id = "moonlight-popup-" + elementID;
-                        inlineContent.style.display = "none";
+                        
+                        classElement.setAttribute( "data-fancybox", data.moonlight_group_id );
                         inlineContent.innerHTML = data.content.rendered;
-        
-                        document.body.appendChild( inlineContent );
 
                     }
                 

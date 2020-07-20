@@ -33,14 +33,7 @@ class Deactivator {
 	 */
 	public static function deactivate() {
 
-		// Remove customizer data.
-		if ( '1' === get_option( self::PREFIX . '_clear_data_customizer' ) ) {
-			foreach ( wp_load_alloptions() as $option => $value ) {
-				if ( strpos( $option, self::PREFIX ) === 0 ) {
-					delete_option( $option );
-				}
-			}
-		}
+		return;
 
 	}
 

@@ -183,7 +183,6 @@ class WP_Admin {
 		}
 
 		$settings_link = array(
-			'<a href="' . esc_url( admin_url( 'edit.php?post_type=' . self::ID . '-popups' ) ) . '">' . __( 'Popups', 'moonlight' ) . '</a>',
 			'<a href="' . esc_url( admin_url( 'plugins.php?page=' . self::ID ) ) . '">' . __( 'Documentation', 'moonlight' ) . '</a>',
 		);
 
@@ -326,9 +325,9 @@ class WP_Admin {
 	public function add_metabox() {
 
 		add_meta_box(
-			'moonlight-popup-options',
-			__( 'Popup Options', 'moonlight' ),
-			array( $this, 'render_popup_options_metabox' ),
+			'moonlight-group-id-options',
+			__( 'Group ID', 'moonlight' ),
+			array( $this, 'render_group_id_options_metabox' ),
 			'moonlight-popup',
 			'side',
 			'default'
@@ -343,22 +342,22 @@ class WP_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function render_popup_options_metabox( $post ) {
+	public function render_group_id_options_metabox( $post ) {
 
 		// Add nonce for security and authentication.
 		wp_nonce_field( 'moonlight_nonce_action', 'moonlight_nonce' );
 
 		// Retrieve an existing value from the database.
-		$moonlight_popup_group_id = get_post_meta( $post->ID, 'moonlight_popup_group_id', true );
+		$moonlight_group_id = get_post_meta( $post->ID, 'moonlight_group_id', true );
 
 		// Set default values.
-		if( empty( $moonlight_popup_group_id ) ) $moonlight_popup_group_id = '';
+		if( empty( $moonlight_group_id ) ) $moonlight_group_id = '';
 
 		// Form fields.
 		echo '<div class="components-base-control">';
 			echo '<div class="components-base-control__field">';
-				echo '<label for="moonlight_popup_group_id" class="moonlight_popup_group_id_label components-base-control__label">' . __( 'Group ID', 'moonlight' ) . '</label>';
-				echo '<input type="text" id="moonlight_popup_group_id" name="moonlight_popup_group_id" class="moonlight_popup_group_id_field components-text-control__input" placeholder="' . esc_attr__( 'group-1', 'moonlight' ) . '" value="' . esc_attr( $moonlight_popup_group_id ) . '" />';
+				echo '<label for="moonlight_group_id" class="moonlight_group_id_label components-base-control__label">' . __( 'Add New Group ID', 'moonlight' ) . '</label>';
+				echo '<input type="text" id="moonlight_group_id" name="moonlight_group_id" class="moonlight_group_id_field components-text-control__input" placeholder="' . esc_attr__( 'group-1', 'moonlight' ) . '" value="' . esc_attr( $moonlight_group_id ) . '" />';
 			echo '</div>';
 		echo '</div>';
 		echo '<p class="description">' . __( 'Associates this content with other paired elements.', 'moonlight' ) . '</p>';
@@ -400,10 +399,10 @@ class WP_Admin {
 			return;
 
 		// Sanitize user input.
-		$moonlight_new_moonlight_popup_group_id = isset( $_POST[ 'moonlight_popup_group_id' ] ) ? sanitize_text_field( $_POST[ 'moonlight_popup_group_id' ] ) : '';
+		$moonlight_new_moonlight_group_id = isset( $_POST[ 'moonlight_group_id' ] ) ? sanitize_text_field( $_POST[ 'moonlight_group_id' ] ) : '';
 
 		// Update the meta field in the database.
-		update_post_meta( $post_id, 'moonlight_popup_group_id', sanitize_title( $moonlight_new_moonlight_popup_group_id ) );
+		update_post_meta( $post_id, 'moonlight_group_id', sanitize_title( $moonlight_new_moonlight_group_id ) );
 
 	}
 
@@ -416,10 +415,10 @@ class WP_Admin {
 
 		\register_rest_field(
 			'moonlight-popup',
-			'moonlight_popup_group_id',
+			'moonlight_group_id',
 			array(
 				'get_callback' => function( $post_arr ) {
-					return get_post_meta( $post_arr['id'], 'moonlight_popup_group_id', true );
+					return get_post_meta( $post_arr['id'], 'moonlight_group_id', true );
 				},
 			)
 		);
@@ -462,7 +461,7 @@ class WP_Admin {
 		// Group ID column.
 		if ( 'popup_group' === $column ) {
 
-			echo get_post_meta( $post_id, 'moonlight_popup_group_id', true );
+			echo get_post_meta( $post_id, 'moonlight_group_id', true );
 
 		}
 
@@ -477,7 +476,7 @@ class WP_Admin {
 	 */
 	public function custom_column_sortable( $columns ) {
 
-		$columns['popup_group'] = 'moonlight_popup_group_id';
+		$columns['popup_group'] = 'moonlight_group_id';
 
 		return $columns;
 
@@ -498,10 +497,10 @@ class WP_Admin {
 
 		}
 
-		if ( 'moonlight_popup_group_id' === $query->get( 'orderby') ) {
+		if ( 'moonlight_group_id' === $query->get( 'orderby') ) {
 
 			$query->set( 'orderby', 'meta_value' );
-			$query->set( 'meta_key', 'moonlight_popup_group_id' );
+			$query->set( 'meta_key', 'moonlight_group_id' );
 
 		}
 
