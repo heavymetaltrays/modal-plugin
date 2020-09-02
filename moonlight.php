@@ -15,7 +15,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Moonlight
- * Plugin URI:        https://github.com/foodinspector/moonlight-plugin/
+ * Plugin URI:        https://github.com/heavymetaltrays/moonlight-plugin/
  * Description:       Adds custom popup functionality to a modern WordPress website.
  * Version:           1.0.0
  * Requires at least: 5
