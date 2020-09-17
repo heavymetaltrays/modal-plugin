@@ -8,10 +8,10 @@
  * @link     https://lunchlady.co/
  * @version  1.0.0
  *
- * @package  LUNCH_LADY\Moonlight
+ * @package  LUNCH_LADY\Modal
  */
 
-namespace LUNCH_LADY\Moonlight;
+namespace LUNCH_LADY\Modal;
 
 // If uninstall not called from WordPress, then exit.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {

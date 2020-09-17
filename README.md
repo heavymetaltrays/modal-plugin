@@ -1,4 +1,4 @@
-=== Moonlight ===
+=== Modal ===
 
 Contributors: lunchlady
 Donate link: https://lunchlady.co/
@@ -10,18 +10,17 @@ Requires PHP: 7
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
-Adds custom popup functionality to a modern WordPress website.
+Adds custom modal functionality to a modern WordPress website.
 
 
 == Description ==
 
-Sometimes called a lightbox or modal, this easy to use plugin helps to quickly and efficiently add popups to a WordPress website. Through four different methods of implementation, you’ll be able to add popups throughout your site in whichever way is most convenient for your process.
+Sometimes called a lightbox or popups, this easy to use plugin helps to quickly and efficiently add modals to a WordPress website. Through three different methods of implementation, you’ll be able to add modals throughout your site in whichever way is most convenient for your process.
 
 #### Features:
 
-- Easy post creation with activation through classes.
 - Easy block and shortcode implementation for quick inline additions.
-- Auto popups for linked images, videos, and maps.
+- Auto modals for linked images, videos, and maps.
 
 
 == Installation ==
@@ -34,7 +33,7 @@ To install this plugin and get it working..
 
 To edit this plugin..
 
-1. `cd moonlight-plugin`
+1. `cd modal-plugin`
 1. `npm install`
 1. `npm run build`
 

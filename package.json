@@ -1,24 +1,24 @@
 {
-  "name": "moonlight",
-  "title": "Moonlight",
+  "name": "modal",
+  "title": "Modal",
   "version": "1.0.0",
-  "description": "Adds custom popup functionality to a modern WordPress website.",
+  "description": "Adds custom modal functionality to a modern WordPress website.",
   "author": "LUNCH LADY <support@lunchlady.co> (https://lunchlady.co)",
   "license": "GPL-2.0",
   "keywords": [
     "WordPress",
-    "Moonlight"
+    "Modal"
   ],
   "scripts": {
     "build": ""
   },
-  "homepage": "https://github.com/heavymetaltrays/moonlight-plugin#readme",
+  "homepage": "https://github.com/heavymetaltrays/modal-plugin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heavymetaltrays/moonlight-plugin.git"
+    "url": "git+https://github.com/heavymetaltrays/modal-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/heavymetaltrays/moonlight-plugin/issues"
+    "url": "https://github.com/heavymetaltrays/modal-plugin/issues"
   },
   "locales": {},
   "devDependencies": {},

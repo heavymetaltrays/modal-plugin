@@ -1,0 +1,24 @@
+.block-editor-block-list__layout {
+
+	.block-editor-block-list__block[data-type="modal/inline-link"] {
+
+		.wp-block {
+
+			width: 100%;
+			max-width: 100%;
+
+		}
+
+	}
+
+	.block-editor-block-list__block[data-type="modal/inline-link"].has-child-selected {
+
+
+	}
+
+	.block-editor-block-list__block[data-type="modal/inline-link"].is-selected {
+
+
+	}
+
+}
