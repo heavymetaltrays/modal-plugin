@@ -17,7 +17,7 @@ if ( $title ) {
 
 	echo '<h4>';
 
-		echo esc_html( $title );
+		echo wp_kses_post( $title );
 
 	echo '</h4>';
 
@@ -27,7 +27,7 @@ if ( $description ) {
 
 	echo '<p>';
 
-		echo esc_html( $description );
+		echo wp_kses_post( $description );
 
 	echo '</p>';
 
