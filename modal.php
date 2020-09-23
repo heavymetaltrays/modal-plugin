@@ -16,7 +16,7 @@
  * @wordpress-plugin
  * Plugin Name:       Modal
  * Plugin URI:        https://github.com/heavymetaltrays/modal-plugin/
- * Description:       Adds custom modal functionality to a modern WordPress website.
+ * Description:       Adds custom modal functionality to a WordPress website.
  * Version:           1.0.0
  * Requires at least: 5
  * Requires PHP:      7

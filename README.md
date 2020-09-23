@@ -10,7 +10,7 @@ Requires PHP: 7
 License: GPL-2.0
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
-Adds custom modal functionality to a modern WordPress website.
+Adds custom modal functionality to a WordPress website.
 
 
 == Description ==
