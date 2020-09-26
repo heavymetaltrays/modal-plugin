@@ -282,7 +282,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						echo '<hr id="what-is-a-modal" class="section-break" />';
 
 						$title = __( 'What is a modal?', 'modal' );
-						$description = __( 'This information is tbd.', 'modal' );
+						$description = __( 'A modal, sometimes referred to as a lightbox or popup, is a way to represent various types of content in an exclusive way. Most often, a modal takes over a screen by creating an opaque layer on top of your content in order to highlight the content represented within the modal.', 'modal' );
 						$details = '';
 
 						echo wp_kses_post( documentation_detail( $title, $description, $details ) );
@@ -290,7 +290,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						echo '<hr id="why-are-modals-used" class="section-break" />';
 
 						$title = __( 'Why are modals used?', 'modal' );
-						$description = __( 'This information is tbd.', 'modal' );
+						$description = __( 'There are a number of reasons to use a modal. Sometimes it is to enlarge an image, other times it is to display a form that was otherwise an eyesore within the page content.', 'modal' );
 						$details = '';
 
 						echo wp_kses_post( documentation_detail( $title, $description, $details ) );
@@ -298,7 +298,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						echo '<hr id="how-are-modals-created" class="section-break" />';
 
 						$title = __( 'How are modals created?', 'modal' );
-						$description = __( 'This information is tbd.', 'modal' );
+						$description = __( 'This plugin uses two parts to create a modal. First, an element that engages a modal that we\'ve called a "link." Second, an element that contains the content found within the modal that we\'ve called the "content." By creating a link element with a paired id to a content element a user is able to engage with an item on your webpage and have content appear within a modal.', 'modal' );
 						$details = '';
 
 						echo wp_kses_post( documentation_detail( $title, $description, $details ) );
@@ -308,14 +308,69 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						$title = __( 'Blocks', 'modal' );
 						$description = sprintf( __( '%1$sBlocks%2$s are components for adding content where blocks have been given the applicability. The following documentation contains the blocks that have been made available within this plugin.', 'modal' ), '<a href="https://wordpress.org/support/article/blocks/" target="_blank"> ', '</a>' );
 						$details = array(
-							sprintf( __( '%1$s%3$s TBD%2$s', 'modal' ), '<h6>', '</h6>', '<span class="dashicons dashicons-editor-code"></span>' ) => array(
-								__( 'A wrapping element block, this information is tbd.', 'modal' ),
+							sprintf( __( '%1$s%3$s Modal Inline Link%2$s', 'modal' ), '<h6>', '</h6>', '<span class="dashicons dashicons-admin-links"></span>' ) => array(
+								__( 'A wrapping element block, interacting with this element engages a paired Modal Inline Content.', 'modal' ),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( 'TBD', 'modal' ) => array(
-										__( 'This information is tbd.', 'modal' ),
+									__( 'Paired ID', 'modal' ) => array(
+										__( 'Associates this element with another paired element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 999999.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-one.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Group ID', 'modal' ) => array(
+										__( 'Associates multiple elements with one another.', 'modal' ),
 										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
 										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
-										sprintf( __( '%1$sEX%2$s: tbd.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-group-one.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'State', 'modal' ) => array(
+										__( 'Whether or not to set an activate state for this content.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: inactive.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: inactive, active.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: active.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Mouse', 'modal' ) => array(
+										__( 'Defines how a user interacts with this element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: click.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: click, hover.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: hover.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Speed', 'modal' ) => array(
+										__( 'Defines the quantity of milliseconds it takes to transition.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 600.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of numbers.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: 3000.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Delay', 'modal' ) => array(
+										__( 'Defines the quantity of milliseconds it takes to change items.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 0.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of numbers.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: 3000.', 'modal' ), '<i>', '</i>' ),
+									),
+								),
+								sprintf( __( '%1$sIcons%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( 'Inactive Icon', 'modal' ) => array(
+										__( 'The icon displayed during an inactive state.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: +.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Active Icon', 'modal' ) => array(
+										__( 'The icon displayed during an active state.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: -.', 'modal' ), '<i>', '</i>' ),
+									),
+								),
+							),
+							sprintf( __( '%1$s%3$s Modal Inline Content%2$s', 'modal' ), '<h6>', '</h6>', '<span class="dashicons dashicons-editor-code"></span>' ) => array(
+								__( 'A wrapping element block, after engaging a Modal Inline Link this paired modal element displays.', 'modal' ),
+								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( 'Paired ID', 'modal' ) => array(
+										__( 'Associates this element with another paired element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 999999.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-one.', 'modal' ), '<i>', '</i>' ),
 									),
 								),
 							),
@@ -328,10 +383,10 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						$title = __( 'Shortcodes', 'modal' );
 						$description = sprintf( __( '%1$sShortcodes%2$s are components for adding content where shortcodes have been given the applicability. The following documentation contains the shortcodes that have been made available within this plugin.', 'modal' ), '<a href="https://codex.wordpress.org/Shortcode" target="_blank"> ', '</a>' );
 						$details = array(
-							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_tbd]' ) => array(
-								__( 'A wrapping element shortcode, this information is tbd.', 'modal' ),
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inline_link]' ) => array(
+								__( 'A wrapping element block, interacting with this element engages a paired Modal Inline Content.', 'modal' ),
 								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( '[' . MODAL_PREFIX .'_tbd tbd=""] CONTENT [/' . MODAL_PREFIX .'_tbd]', 'modal' ),
+									__( '[' . MODAL_PREFIX .'_inline_link paired_id=""] CONTENT [/' . MODAL_PREFIX .'_inline_link]', 'modal' ),
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'ID', 'modal' ) . ' (id)' => array(
@@ -346,11 +401,107 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
 										sprintf( __( '%1$sEX%2$s: custom-class.', 'modal' ), '<i>', '</i>' ),
 									),
-									__( 'TBD', 'modal' ) . ' (tbd)' => array(
-										__( 'This information is tbd.', 'modal' ),
+									__( 'Paired ID', 'modal' ) . ' (paired_id)' => array(
+										__( 'Associates this element with another paired element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 999999.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-one.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Group ID', 'modal' ) . ' (group_id)' => array(
+										__( 'Associates multiple elements with one another.', 'modal' ),
 										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
 										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
-										sprintf( __( '%1$sEX%2$s: tbd.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-group-one.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'State', 'modal' ) . ' (state)' => array(
+										__( 'Whether or not to set an activate state for this content.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: inactive.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: inactive, active.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: active.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Mouse', 'modal' ) . ' (mouse)' => array(
+										__( 'Defines how a user interacts with this element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: click.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: click, hover.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: hover.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Speed', 'modal' ) . ' (speed)' => array(
+										__( 'Defines the quantity of milliseconds it takes to transition.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 600.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of numbers.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: 3000.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Delay', 'modal' ) . ' (delay)' => array(
+										__( 'Defines the quantity of milliseconds it takes to change items.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 0.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of numbers.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: 3000.', 'modal' ), '<i>', '</i>' ),
+									),
+								),
+							),
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inline_content]' ) => array(
+								__( 'A wrapping element block, after engaging a Modal Inline Link this paired modal element displays.', 'modal' ),
+								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( '[' . MODAL_PREFIX .'_inline_content paired_id=""] CONTENT [/' . MODAL_PREFIX .'_inline_content]', 'modal' ),
+								),
+								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( 'ID', 'modal' ) . ' (id)' => array(
+										__( 'An attribute typically used to define the uniqueness of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-id.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Class', 'modal' ) . ' (class)' => array(
+										__( 'An attribute typically used to define styles of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-class.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Paired ID', 'modal' ) . ' (paired_id)' => array(
+										__( 'Associates this element with another paired element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: 999999.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: modal-one.', 'modal' ), '<i>', '</i>' ),
+									),
+								),
+							),
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inactive_icon]' ) => array(
+								__( 'A wrapping element block, after setting a Modal Inline Link state to "inactive," this icon displays.', 'modal' ),
+								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( '[' . MODAL_PREFIX .'_inactive_icon] CONTENT [/' . MODAL_PREFIX .'_inactive_icon]', 'modal' ),
+								),
+								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( 'ID', 'modal' ) . ' (id)' => array(
+										__( 'An attribute typically used to define the uniqueness of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-id.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Class', 'modal' ) . ' (class)' => array(
+										__( 'An attribute typically used to define styles of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-class.', 'modal' ), '<i>', '</i>' ),
+									),
+								),
+							),
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_active_icon]' ) => array(
+								__( 'A wrapping element block, after setting a Modal Inline Link state to "active," this icon displays.', 'modal' ),
+								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( '[' . MODAL_PREFIX .'_active_icon] CONTENT [/' . MODAL_PREFIX .'_active_icon]', 'modal' ),
+								),
+								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
+									__( 'ID', 'modal' ) . ' (id)' => array(
+										__( 'An attribute typically used to define the uniqueness of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-id.', 'modal' ), '<i>', '</i>' ),
+									),
+									__( 'Class', 'modal' ) . ' (class)' => array(
+										__( 'An attribute typically used to define styles of an element.', 'modal' ),
+										sprintf( __( '%1$sDefault%2$s: N/A.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sOptions%2$s: A string of characters.', 'modal' ), '<i>', '</i>' ),
+										sprintf( __( '%1$sEX%2$s: custom-class.', 'modal' ), '<i>', '</i>' ),
 									),
 								),
 							),
@@ -361,7 +512,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						echo '<hr id="etc" class="section-break" />';
 
 						$title = __( 'Etc', 'modal' );
-						$description = sprintf( __( 'Etc refers to the miscellaneous capabilities that this plugin includes within a website. The following documentation contains the capabilities that have been made available within this plugin.', 'modal' ), '<a href="https://codex.wordpress.org/Shortcode" target="_blank"> ', '</a>' );
+						$description = sprintf( __( 'Etc refers to the miscellaneous capabilities that this plugin includes within a website. The following documentation contains the capabilities that have been made available within this plugin.', 'modal' ), '' );
 						$details = array(
 							sprintf( __( '%1$sURL Parameter "modal"%2$s', 'modal' ), '<h6>', '</h6>' ) => array(
 								__( 'A URL parameter is a string found within a URL. By adding "modal=paired-id" within a URL the targeted modal will automatically be given an "active" state.', 'modal' ),
@@ -376,7 +527,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'Ignore', 'modal' ) => array(
-										__( 'If you\'d like to prevent the automatic modal functionality on a linked media file, simple add the class "ignore-fancybox."', 'modal' ),
+										__( 'If you\'d like to prevent the automatic modal functionality on a linked media file, simply add the class "ignore-fancybox."', 'modal' ),
 										sprintf( __( '%1$sEX%2$s: class="ignore-fancybox"', 'modal' ), '<i>', '</i>' ),
 									),
 									__( 'Group', 'modal' ) => array(
@@ -384,7 +535,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 										sprintf( __( '%1$sEX%2$s: data-fancybox="group-one"', 'modal' ), '<i>', '</i>' ),
 									),
 									__( 'Google Map', 'modal' ) => array(
-										__( 'If you\'d like to make a modal with a Google Map you can do so with the map URL, the shortend URL will not work.', 'modal' ),
+										__( 'If you\'d like to make a modal with a Google Map you can do so with the map URL, the shortened URL will not work.', 'modal' ),
 										sprintf( __( '%1$sEX%2$s: href="https://www.google.com/maps/place/..."', 'modal' ), '<i>', '</i>' ),
 									),
 									__( 'Dimensions', 'modal' ) => array(

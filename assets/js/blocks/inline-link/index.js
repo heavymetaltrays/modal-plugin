@@ -16,8 +16,8 @@ const { name, category, attributes } = metadata;
 
 const settings = {
 
-	title: __( "Inline Link", "modal" ),
-	description: __( 'An inline modal link block.', "modal" ),
+	title: __( "Modal Inline Link", "modal" ),
+	description: __( 'A wrapping element block, interacting with this element engages a paired Modal Inline Content.', "modal" ),
 	icon,
 	category,
 	keywords: [ __( "inline modal popup content modal", "modal" ) ],
