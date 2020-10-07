@@ -15,11 +15,11 @@ Adds custom modal functionality to a WordPress website.
 
 == Description ==
 
-Sometimes called a lightbox or popups, this easy to use plugin helps to quickly and efficiently add modals to a WordPress website. Through three different methods of implementation, you’ll be able to add modals throughout your site in whichever way is most convenient for your process.
+A lightweight plugin meant to quickly and easily implement modal functionality. Sometimes called a lightbox or popups, this plugin integrates the "Fancybox" JavaScript library from the company Fancyapps in order to help create it's modal functionality.
 
 #### Features:
 
-- Easy block and shortcode implementation for quick inline additions.
+- Easy block, and shortcode implementation for quick inline additions.
 - Auto modals for linked images, videos, and maps.
 
 
@@ -29,7 +29,7 @@ To install this plugin and get it working..
 
 1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Dive into all the blocks, shortcodes, classes, and all the other features this plugin includes.
+1. Dive into all the features this plugin includes.
 
 To edit this plugin..
 

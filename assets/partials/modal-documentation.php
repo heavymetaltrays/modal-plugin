@@ -275,7 +275,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 						echo '<p>';
 
-							echo sprintf( __( 'A lightweight plugin meant to quickly and easily implement modal functionality. This plugin integrates the "Fancybox" JavaScript library from the company Fancyapps in order to help create it\'s modal functionality.', 'modal' ) );
+							echo sprintf( __( 'A lightweight plugin meant to quickly and easily implement modal functionality. Sometimes called a lightbox or popups, this plugin integrates the "Fancybox" JavaScript library from the company Fancyapps in order to help create it\'s modal functionality.', 'modal' ) );
 
 						echo '</p>';
 
