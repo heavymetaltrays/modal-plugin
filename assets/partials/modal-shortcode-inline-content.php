@@ -8,7 +8,7 @@
  * @link     https://lunchlady.co/
  * @version  1.0.0
  *
- * @package  LUNCH_LADY\Modal
+ * @package  Modal
  */
 
 namespace LUNCH_LADY\Modal;
