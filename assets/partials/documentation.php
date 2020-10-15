@@ -13,10 +13,10 @@
 
 namespace LUNCH_LADY\Modal;
 
-wp_enqueue_style( MODAL_ID . '-documentation' );
-wp_enqueue_script( MODAL_ID . '-documentation' );
+wp_enqueue_style( ID . '-documentation' );
+wp_enqueue_script( ID . '-documentation' );
 
-echo '<div class="wrap ' . MODAL_ID . '-documentation">';
+echo '<div class="wrap ' . ID . '-documentation">';
 
 	echo '<div id="scroll-up">&nbsp;</div>';
 
@@ -31,9 +31,9 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 			echo '<div class="logo">';
 
-				echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '">';
+				echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '">';
 
-					echo MODAL_NAME;
+					echo NAME;
 
 				echo '</a>';
 
@@ -83,7 +83,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// What is a modal?.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#what-is-a-modal">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#what-is-a-modal">';
 
 										esc_html_e( 'What is a modal?', 'modal' );
 
@@ -95,7 +95,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// Why are modals used?.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#why-are-modals-used">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#why-are-modals-used">';
 
 										esc_html_e( 'Why are modals used?', 'modal' );
 
@@ -107,7 +107,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// How are modals created?.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#how-are-modals-created">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#how-are-modals-created">';
 
 										esc_html_e( 'How are modals created?', 'modal' );
 
@@ -131,7 +131,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// Blocks.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#blocks">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#blocks">';
 
 										esc_html_e( 'Blocks', 'modal' );
 
@@ -143,7 +143,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// Shortcodes.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#shortcodes">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#shortcodes">';
 
 										esc_html_e( 'Shortcodes', 'modal' );
 
@@ -155,7 +155,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// Etc.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#etc">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#etc">';
 
 										esc_html_e( 'Etc', 'modal' );
 
@@ -179,7 +179,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// Fancyapps.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#fancyapps">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#fancyapps">';
 
 										esc_html_e( 'Fancyapps', 'modal' );
 
@@ -191,7 +191,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 									// LUNCH LADY.
 
-									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#lunch-lady">';
+									echo '<a href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#lunch-lady">';
 
 										esc_html_e( 'LUNCH LADY', 'modal' );
 
@@ -383,10 +383,10 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 						$title = __( 'Shortcodes', 'modal' );
 						$description = sprintf( __( '%1$sShortcodes%2$s are components for adding content where shortcodes have been given the applicability. The following documentation contains the shortcodes that have been made available within this plugin.', 'modal' ), '<a href="https://codex.wordpress.org/Shortcode" target="_blank"> ', '</a>' );
 						$details = array(
-							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inline_link]' ) => array(
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . PREFIX .'_inline_link]' ) => array(
 								__( 'A wrapping element block, interacting with this element engages a paired Modal Inline Content.', 'modal' ),
 								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( '[' . MODAL_PREFIX .'_inline_link paired_id=""] CONTENT [/' . MODAL_PREFIX .'_inline_link]', 'modal' ),
+									__( '[' . PREFIX .'_inline_link paired_id=""] CONTENT [/' . PREFIX .'_inline_link]', 'modal' ),
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'ID', 'modal' ) . ' (id)' => array(
@@ -439,10 +439,10 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 									),
 								),
 							),
-							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inline_content]' ) => array(
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . PREFIX .'_inline_content]' ) => array(
 								__( 'A wrapping element block, after engaging a Modal Inline Link this paired modal element displays.', 'modal' ),
 								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( '[' . MODAL_PREFIX .'_inline_content paired_id=""] CONTENT [/' . MODAL_PREFIX .'_inline_content]', 'modal' ),
+									__( '[' . PREFIX .'_inline_content paired_id=""] CONTENT [/' . PREFIX .'_inline_content]', 'modal' ),
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'ID', 'modal' ) . ' (id)' => array(
@@ -465,10 +465,10 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 									),
 								),
 							),
-							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_inactive_icon]' ) => array(
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . PREFIX .'_inactive_icon]' ) => array(
 								__( 'A wrapping element block, after setting a Modal Inline Link state to "inactive," this icon displays.', 'modal' ),
 								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( '[' . MODAL_PREFIX .'_inactive_icon] CONTENT [/' . MODAL_PREFIX .'_inactive_icon]', 'modal' ),
+									__( '[' . PREFIX .'_inactive_icon] CONTENT [/' . PREFIX .'_inactive_icon]', 'modal' ),
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'ID', 'modal' ) . ' (id)' => array(
@@ -485,10 +485,10 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 									),
 								),
 							),
-							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . MODAL_PREFIX .'_active_icon]' ) => array(
+							sprintf( __( '%1$s %3$s %2$s', 'modal' ), '<h6>', '</h6>', '[' . PREFIX .'_active_icon]' ) => array(
 								__( 'A wrapping element block, after setting a Modal Inline Link state to "active," this icon displays.', 'modal' ),
 								sprintf( __( '%1$sExample%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
-									__( '[' . MODAL_PREFIX .'_active_icon] CONTENT [/' . MODAL_PREFIX .'_active_icon]', 'modal' ),
+									__( '[' . PREFIX .'_active_icon] CONTENT [/' . PREFIX .'_active_icon]', 'modal' ),
 								),
 								sprintf( __( '%1$sOptions%2$s', 'modal' ), '<strong>', '</strong>' ) => array(
 									__( 'ID', 'modal' ) . ' (id)' => array(
@@ -582,7 +582,7 @@ echo '<div class="wrap ' . MODAL_ID . '-documentation">';
 
 	echo '</div>';
 
-	echo '<a class="scroll-up" href="' . esc_url( admin_url( 'plugins.php?page=' . MODAL_ID ) ) . '#scroll-up">';
+	echo '<a class="scroll-up" href="' . esc_url( admin_url( 'plugins.php?page=' . ID ) ) . '#scroll-up">';
 
 		echo '^';
 

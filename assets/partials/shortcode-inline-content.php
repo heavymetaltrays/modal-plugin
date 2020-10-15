@@ -45,7 +45,7 @@ if ( '' !== trim( wp_strip_all_tags( do_shortcode( esc_attr( $atts['paired_id'] 
 
 // Output.
 
-echo '<div id="' . esc_attr( $paired_id ) . '" class="wp-shortcode-' . MODAL_ID . '-inline-content ' . esc_attr( $class ) . '"  style="display:none;">';
+echo '<div id="' . esc_attr( $paired_id ) . '" class="wp-shortcode-' . ID . '-inline-content ' . esc_attr( $class ) . '"  style="display:none;">';
 
 	echo do_shortcode( $output );
 

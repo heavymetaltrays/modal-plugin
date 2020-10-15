@@ -67,7 +67,7 @@ if ( do_shortcode( esc_attr( $atts['group_id'] ) ) ) {
 
 // Output.
 
-echo '<a id="' . esc_attr( $id ) . '" class="wp-shortcode-' . MODAL_ID . '-inline-link ' . esc_attr( $class ) . '"  data-src="#' . esc_attr( $paired_id ) . '" data-fancybox="' . esc_attr( $group_id ) . '" data-touch="false" href="javascript:;">';
+echo '<a id="' . esc_attr( $id ) . '" class="wp-shortcode-' . ID . '-inline-link ' . esc_attr( $class ) . '"  data-src="#' . esc_attr( $paired_id ) . '" data-fancybox="' . esc_attr( $group_id ) . '" data-touch="false" href="javascript:;">';
 
 	echo do_shortcode( $output );
 
