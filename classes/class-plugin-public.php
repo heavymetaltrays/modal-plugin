@@ -96,7 +96,7 @@ class Plugin_Public {
 
 		ob_start();
 
-		include URL . 'assets/partials/shortcode-inline-link.php';
+		include PATH . 'assets/partials/shortcode-inline-link.php';
 
 		$output = ob_get_contents();
 
@@ -119,7 +119,7 @@ class Plugin_Public {
 
 		ob_start();
 
-		include URL . 'assets/partials/shortcode-inline-content.php';
+		include PATH . 'assets/partials/shortcode-inline-content.php';
 
 		$output = ob_get_contents();
 
