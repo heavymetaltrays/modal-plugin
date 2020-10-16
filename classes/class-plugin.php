@@ -120,8 +120,10 @@ class Plugin {
 		/**
 		 * Shortcodes.
 		 */
-		// TBD.
-		$this->loader->add_shortcode( PREFIX . '_tbd', $plugin_public, 'shortcode_tbd' );
+		// Inline Link.
+		$this->loader->add_shortcode( PREFIX . '_inline_link', $plugin_public, 'shortcode_inline_link' );
+		// Inline Content.
+		$this->loader->add_shortcode( PREFIX . '_inline_content', $plugin_public, 'shortcode_inline_content' );
 
 	}
 
