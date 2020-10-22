@@ -50,17 +50,6 @@ class Plugin_Public {
 
 		wp_enqueue_script( ID . '-fancybox' );
 
-		// Public CSS.
-		wp_register_style(
-			ID . '-public',
-			URL . 'assets/css/' . ID . '-public.css',
-			array(),
-			'1.0.0',
-			'all'
-		);
-
-		wp_enqueue_style( ID . '-public' );
-
 		// Public JS.
 		wp_register_script(
 			ID . '-public',

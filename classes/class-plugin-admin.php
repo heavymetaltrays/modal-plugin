@@ -89,37 +89,6 @@ class Plugin_Admin {
 	 */
 	public function enqueue_scripts() {
 
-		// Admin CSS.
-		wp_register_style(
-			ID . '-admin',
-			URL . 'assets/css/' . ID . '-admin.css',
-			array(),
-			'1.0.0',
-			'all'
-		);
-
-		wp_enqueue_style( ID . '-admin' );
-
-		// Admin JS.
-		wp_register_script(
-			ID . '-admin',
-			URL . 'assets/js/' . ID . '-admin-min.js',
-			array(),
-			'1.0.0',
-			true
-		);
-
-		$public_data = array(
-			'pluginURL' => URL,
-		);
-		wp_localize_script(
-			ID . '-admin',
-			PREFIX,
-			$public_data
-		);
-
-		wp_enqueue_script( ID . '-admin' );
-
 		// Documentation CSS.
 		wp_register_style(
 			ID . '-documentation',
