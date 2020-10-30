@@ -50,6 +50,8 @@ class inlineLinkSave extends Component {
 				data-touch={`false`}
 				href={`javascript:;`}
 				style={ customStyles }
+				aria-expanded={`false`}
+				aria-controls={`${ pairedID ? slugify( pairedID ) : "" }`}
 			>
 				<InnerBlocks.Content />
 			</a>

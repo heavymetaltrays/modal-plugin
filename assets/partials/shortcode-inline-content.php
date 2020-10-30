@@ -43,9 +43,19 @@ if ( '' !== trim( wp_strip_all_tags( do_shortcode( esc_attr( $atts['paired_id'] 
 
 }
 
+// Labeledby.
+
+$labeledby = '';
+
+if ( '' !== trim( sanitize_html_class( do_shortcode( esc_attr( $atts['labeledby'] ) ) ) ) ) {
+
+	$labeledby = sanitize_html_class( do_shortcode( esc_attr( $atts['labeledby'] ) ) );
+
+}
+
 // Output.
 
-echo '<div id="' . esc_attr( $paired_id ) . '" class="wp-shortcode-' . ID . '-inline-content ' . esc_attr( $class ) . '"  style="display:none;">';
+echo '<div id="' . esc_attr( $paired_id ) . '" class="wp-shortcode-' . ID . '-inline-content ' . esc_attr( $class ) . '" modal-paired="' . esc_attr( $paired_id ) . '" style="display:none;" role="region" aria-labeledby="' . $labeledby . '">';
 
 	echo do_shortcode( $output );
 

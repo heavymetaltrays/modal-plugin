@@ -27,7 +27,8 @@ class inlineContentSave extends Component {
 		const {
 			pairedID,
 			textColor,
-			backgroundColor
+			backgroundColor,
+			labeledbyID
 		} = attributes;
 
 		// Custom styles.
@@ -44,7 +45,10 @@ class inlineContentSave extends Component {
 			<div
 				id={`${ pairedID ? slugify( pairedID ) : "" }`}
 				className={`${ className ? className : "" }`}
+				modal-paired={`${ pairedID ? slugify( pairedID ) : "" }`}
 				style={ customStyles }
+				role={`region`}
+				aria-labeledby={`${ labeledbyID ? slugify( labeledbyID ) : "" }`}
 			>
 				<InnerBlocks.Content />
 			</div>

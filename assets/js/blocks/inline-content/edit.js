@@ -29,7 +29,8 @@ class inlineContentEdit extends Component {
 		const {
 			pairedID,
 			textColor,
-			backgroundColor
+			backgroundColor,
+			labeledbyID
 		} = attributes;
 
 		// Custom styles.
@@ -74,10 +75,21 @@ class inlineContentEdit extends Component {
 					>
 					</PanelColorSettings>
 				</InspectorControls>
+				<InspectorAdvancedControls>
+					<TextControl
+						label={ __( "Labeledby ID", "accordion" ) }
+						type="text"
+						value={ labeledbyID }
+						onChange={ ( labeledbyID ) => setAttributes( { labeledbyID } ) }
+					/>
+				</InspectorAdvancedControls>
 				<div
 					id={`${ pairedID ? slugify( pairedID ) : "" }`}
 					className={`${ className ? className : "" }`}
+					modal-paired={`${ pairedID ? slugify( pairedID ) : "" }`}
 					style={ customStyles }
+					role={`region`}
+					aria-labeledby={`${ labeledbyID ? slugify( labeledbyID ) : "" }`}
 				>
 					<InnerBlocks />
 				</div>
