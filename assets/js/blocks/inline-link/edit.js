@@ -98,6 +98,8 @@ class inlineLinkEdit extends Component {
 					data-fancybox={`${ groupID ? groupID : "" }`}
 					data-touch={`false`}
 					style={ customStyles }
+					role={`button`}
+					aria-pressed={`false`}
 					aria-expanded={`false`}
 					aria-controls={`${ pairedID ? slugify( pairedID ) : "" }`}
 				>
