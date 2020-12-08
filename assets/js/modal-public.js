@@ -23,7 +23,7 @@
 
         Array.prototype.forEach.call( fileElements, function ( fileElement ) {
 
-            if ( ! fileElement.classList.contains( "ignore-fancybox" ) && ! fileElement.classList.contains( "cancel-fancybox" ) && ! fileElement.hasAttribute( 'data-fancybox' ) ) {
+            if ( ! fileElement.getAttribute( "href" ).contains( "youtube.com/user" ) && ! fileElement.classList.contains( "no-modal" ) && ! fileElement.classList.contains( "ignore-fancybox" ) && ! fileElement.classList.contains( "cancel-fancybox" ) && ! fileElement.hasAttribute( 'data-fancybox' ) ) {
 
                 fileElement.setAttribute( "data-fancybox", "" );
 
